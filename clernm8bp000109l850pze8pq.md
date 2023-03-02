@@ -167,12 +167,14 @@ Several actions are [built in](https://plopjs.com/documentation/#built-in-action
 
 * `add` - this adds a file to our project. With this action, you’ll need to specify a template that will be used to create the file. It’s encouraged that within your project folder, you’ll have a plop-templates folder where all these templated files and folders live. The templates support the handlebar format so you can inject the user’s input into the template.
     
-    &lt;aside&gt; 💎 If you’re new to handlebars, have no fear! You only need to know a couple of things.
-    
-    1. Your file will end in `.hbs`, the handlebar extension
-        
-    2. Inside your file, if you want to reference a variable, wrap it in double curly brackets: `{{ episodeNumber }}`. With handlebars, you can also specify modifiers to format the text you’re passing in. For example, by adding `titleCase` in front of my variable `name`, it will capitalize the first letter of each word: `{{ titleCase name }}` &lt;/aside&gt;
-        
+
+> If you’re new to handlebars, have no fear! You only need to know a couple of things.
+> 
+> 1. Your file will end in `.hbs`, the handlebar extension
+>     
+> 2. Inside your file, if you want to reference a variable, wrap it in double curly brackets: `{{ episodeNumber }}`. With handlebars, you can also specify modifiers to format the text you’re passing in. For example, by adding `titleCase` in front of my variable `name`, it will capitalize the first letter of each word: `{{ titleCase name }}`
+>     
+
 * `addMany` - allows you to add multiple files to our project with a single action
     
 * `modify` - you can use this action in one of two ways. You can either specify a `pattern` to find and replace the text in your file. Or, you can use a `transform` property to transform the file contents.
