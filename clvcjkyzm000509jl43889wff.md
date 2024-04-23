@@ -44,21 +44,21 @@ Since I wanted to build community and encourage engagement, I also wanted to see
 
 There’s also a list of all the projects that everyone is working on:
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885448978/b289268a-b6dc-47a8-baf9-7b337d78a36b.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713898776748/d24feef7-ef72-4633-8740-15742e5bc561.png align="center")
 
 Lastly, I’m competitive, so I created a leaderboard. The intention here isn’t to create an unhealthy culture, but to get in a habit of providing regular updates. So, even if the day’s update was, “I didn’t do anything today, tomorrow’s another day.” That counts!
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885460005/234a2d51-d2ae-4b64-882c-b2e915b35dee.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713898818860/8895c988-6832-4dfd-a30f-1a199915c3fa.png align="center")
 
-Even though the landing pages may seem simplistic, there’s a lot going on behind the scenes.
+Even though the page designs may seem simplistic, there’s a lot going on behind the scenes.
 
 Selfishly, I love reading about tech stacks and the development decisions within a project 🤓. So, here’s my deep dive.
 
-But first, if you want to take a look at the code, [everything is open sourced](https://github.com/ahaywood/two-week-build__remix).
+But first, if you want to take a look at the code, [everything is open source and on GitHub](https://github.com/ahaywood/two-week-build__remix) .
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885478548/301019b4-b3d2-4f1e-8617-357f79269a43.png align="center")
 
-I’m also running a May cohort, if you want to [join the next cohort](https://www.twoweekbuild.com/register).
+I’m also running a May cohort, if [you're interested in joining](https://www.twoweekbuild.com/register).
 
 # The Tech Stack
 
@@ -73,14 +73,14 @@ I’m also running a May cohort, if you want to [join the next cohort](https://w
 
 Funny you should ask. The first iteration of the site was on [Astro](https://astro.build)(!!) The original version of the site was a simple landing page with an email signup form (powered by [Kwes Forms](https://kwesforms.com)). But, as my ideas about the project grew, it became harder to maintain within Astro.
 
-Don’t get me wrong, everything that I wanted to do could be done within Astro. It just felt like I was butting up against its edges. For example, within Astro, you can use Astro’s component system, but you can also bring your own frontend (React, Vue, or Svelte). This is great for pieces that require interactivity or need state.
+Don’t get me wrong, everything that I wanted to do could be done within Astro. It just felt like I was butting up against its edges. For example, within Astro, you can use Astro’s component system, but you can also bring your own frontend (React, Vue, Svelte, Lit, Preact, Solid, or Alpine). This is great for pieces that require interactivity or need state.
 
 * ✅ You can stick a React component inside an Astro component (an island).
     
 * ❌ But, you can’t stick an Astro component inside a React component.
     
 
-I ran into several instances where I had an Astro component, would nest a React component, and would need to go back to Astro. You can’t do that. Once you nest a React component, you have to stay in React. — Instances like this only became more complicated when you start talking to database.
+I ran into several instances where I had an Astro component, would nest a React component, and would need to go back to Astro. You can’t do that. Once you nest a React component, you have to stay in React. — Instances like this only became more complicated when you start talking to a database.
 
 I still love Astro and will continue to reach for it when I need a marketing or content focused site.
 
@@ -90,7 +90,7 @@ I’m a lead maintainer on the [RedwoodJS](https://redwoodjs.com) core team. Nat
 
 * I like to keep tabs on what other frameworks are doing. I believe all the frameworks are good in their own right. And, we all make each other better. The best way to truly learn a framework’s pros and cons is to build a project on top of it. Call it “competitive analysis.”
     
-* The second reason is RedwoodJS is a SPA, a single page application. This architecture is perfect if you’re building an application that sits behind a log in. It struggles if you URLs to unfurl or crawlers to index your site ([Google has gotten better](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics)). With Redwood, this won’t always be the case. We’re working on a [React Server Components and SSR implementation](https://redwoodjs.com/blog/rsc-now-in-redwoodjs) that will resolve these issues.
+* The second reason is RedwoodJS is a SPA, a single page application. This architecture is perfect if you’re building an application that sits behind a log in. It struggles if your URLs need to unfurl or crawlers need to index your site ([Google has gotten better](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics)). With Redwood, this won’t always be the case. We’re working on a [React Server Components and SSR implementation](https://redwoodjs.com/blog/rsc-now-in-redwoodjs) that will resolve these issues.
     
 
 All that’s to say, I went with [Remix](https://remix.run/).
@@ -107,7 +107,7 @@ The opposite is also true, you could use the Supabase auth system, without their
 
 In my case, why would I use one without the other? I need auth and I need a database, so it only made sense to use both.
 
-Plus, Supabase’s auth system also makes it easy to integrate with third party oAuth systems like Google, Apple, Twitter, and GitHub.
+Plus, Supabase’s auth system also makes it easy to integrate with third party oAuth systems like Google, Apple, Twitter, and GitHub, just to name a few.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885502006/8d57a5da-7466-4f7d-8bc6-db663a5fbcaa.png align="center")
 
@@ -117,7 +117,7 @@ For this project, I kept it simple: email and password only. But, it’s nice kn
 
 Supabase has a Server-Side Auth package that makes it easy to integrate.
 
-I’ll walk through the steps here, but you can find [additional documentation here.](https://supabase.com/docs/guides/auth/server-side/creating-a-client?queryGroups=framework&framework=remix)
+I’ll walk through the steps here, but you can find [additional documentation on their site.](https://supabase.com/docs/guides/auth/server-side/creating-a-client?queryGroups=framework&framework=remix)
 
 Once you spin up a project within Supabase, you’ll need to grab the Supabase URL and Anon Keys and stick these inside your projects `.env` file:
 
@@ -131,7 +131,7 @@ npm install @supabase/ssr @supabase/supabase-js
 
 Within your Remix project, you’ll want to account for the loader, action, and component.
 
-If you look at the documentation on Supabase’s site it says that this code is the loader.
+If you look at the documentation on Supabase’s site it says that this code is the loader:
 
 ```jsx
 import { type LoaderFunctionArgs } from '@remix-run/node'
@@ -161,7 +161,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 }
 ```
 
-I refactored it slightly, so that I wouldn’t hav duplicate code all over my project. I created a file a file inside my app director called `supabase.server.ts`. By making the file name `server.ts` it specifies that this code has to run on the server and never the client.
+I refactored it slightly, so that I wouldn’t have duplicate code all over my project. I created a file a file inside my app director called `supabase.server.ts`. By making the file name `server.ts` it specifies that this code *has* to run on the server and *never* the client.
 
 ```jsx
 import { createServerClient, parse, serialize } from '@supabase/ssr'
@@ -235,7 +235,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 ```
 
-If you study this code, you’ll notice it looks VERY similar to the `loader` code. The only difference is
+If you study this code, you’ll notice it looks VERY similar to the `loader` code. The only difference is:
 
 ```jsx
 export async function loader({ request }: LoaderFunctionArgs) {
@@ -272,7 +272,7 @@ export default function Index() {
 }
 ```
 
-I refactored this a little bit too. Within my `app` directory, I created a file called `supabase.client.ts`. As you probably guessed, this is code that gets run on the client.
+I refactored this a little bit too. Within my `app` directory, I created a file called `supabase.client.ts`. As you probably guessed, this is code that *only* runs on the client.
 
 ```jsx
 import { createBrowserClient } from '@supabase/ssr'
@@ -284,9 +284,9 @@ export const createSupabaseBrowserClient = () => {
 
 You’ll notice that I’m referencing a couple of environmental variables: `SUPABASE_URL` and `SUPABASE_ANON_KEY`. We need a way of getting these variables from our `.env` file to our client code.
 
-In the code Supabase provided, it’s able to call them directly, on the server, in our `loader` function using `process.env.SUPABASE_URL!` and `process.env.SUPABASE_ANON_KEY!`. Since these are returned, we can access them inside our component using the `useLoaderData` hook.
+In the code Supabase provided, it’s able to call them directly, on the server, in our `loader` function using `process.env.SUPABASE_URL!` and `process.env.SUPABASE_ANON_KEY!`. (The `!` insists that this exists.) Since these are returned, we can access them inside our component using the `useLoaderData` hook.
 
-We’ll want to do something similar but different. Within our `root.tsx` This is the entry point to our application. We can expose our environmental variables here, making them available throughout our entire application. Just like any other route, we can export a `loader` function from within our `root.tsx` file as well.
+We’ll want to do something similar but different within our `root.tsx` file. This is the entry point to our application. We can expose our environmental variables here, making them available throughout our entire application. Just like any other route, we can export a `loader` function from within our `root.tsx` file as well.
 
 ```jsx
 export async function loader() {
@@ -300,7 +300,7 @@ export async function loader() {
 }
 ```
 
-Now, within our `App` function, we can use `useLoaderData` to that data:
+Now, within our `App` function, we can use `useLoaderData` to retrieve our environmental variables:
 
 ```jsx
 export default function App() {
@@ -309,7 +309,7 @@ export default function App() {
 
 Now, we just need to attach it the window. Right above the closing `</body>` tag:
 
-```jsx
+```xml
 <script
   dangerouslySetInnerHTML={{
     __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
@@ -319,7 +319,7 @@ Now, we just need to attach it the window. Right above the closing `</body>` tag
 
 I also ran into a few instances where I’d get linting errors with my environmental variables. I finally resolved them by adding a custom definition. Within my `app/global.d.ts` file:
 
-```jsx
+```plaintext
 declare global {
   interface Window {
     ENV: {
@@ -330,7 +330,7 @@ declare global {
 }
 ```
 
-NOTE: Below/After the `declare` bock, I have additional type definitions. For example:
+***NOTE***: Below/After the `declare` bock, I have additional type definitions. For example, I define types that mirror the content stored within the database:
 
 ```jsx
 export type Project = {
@@ -345,7 +345,7 @@ export type Project = {
 }
 ```
 
-Now that we have our basic building blocks set up, we need to actually implement this into our login workflow. Again, we’re focused on just the email/password implementation. (And if you’re following along with Supabase’s Docuemntation we’re on [**Email Auth with PKCE flow for SSR**](https://supabase.com/docs/guides/auth/server-side/email-based-auth-with-pkce-flow-for-ssr?queryGroups=framework&framework=remix)).
+Now that we have our basic building blocks set up, we need to actually implement this into our login workflow. Again, we’re focused on just the email/password implementation. (And if you’re following along with Supabase’s Documentation we’re on [**Email Auth with PKCE flow for SSR**](https://supabase.com/docs/guides/auth/server-side/email-based-auth-with-pkce-flow-for-ssr?queryGroups=framework&framework=remix)).
 
 First, we need to create a file `app/routes/auth.confirm.tsx` and add the following code:
 
@@ -454,20 +454,19 @@ Reset Password template:
     >Reset Password</a
   >
 </p>
-
 ```
 
-You may have noticed that all these templates reference a `{{ .SiteURL }}` variable. You can change this under, Authentication &gt; URL Configuration. If you’re developing locally, you’ll probably want this to say [http://localhost:3000](http://localhost:3000) but once you launch your project, don’t forget to update it to the production URL.
+You may have noticed that all these templates reference a `{{ .SiteURL }}` variable. You can change this under, **Authentication &gt; URL Configuration**. If you’re developing locally, you’ll probably want this to say [http://localhost:3000](http://localhost:3000) but once you launch your project, don’t forget to update it to the production URL.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885584809/babf1251-2857-4ce1-852e-c95dec304ea4.png align="center")
 
 ### Login Page
 
-Let’s take a look at the Login page. Mine is found under `app/routes/_auth.login/route.tsx`
+Let’s take a look at the Login page. Mine is under `app/routes/_auth.login/route.tsx`
 
-Using Remix’s router and folder structure, `_auth/route.tsx` is used to establish the layouts for any pages with `_auth`in their pathname. Here, my layout file only includes display information, used for the login, forgot password, register, and reset password pages.
+Using Remix’s router and folder structure, `_auth/route.tsx` is used to establish the layouts for any pages with `_auth` in their pathname. Here, my layout file only includes display information, used for the login, forgot password, register, and reset password pages.
 
-On the login page (`/login` ) page itself, the form fields are standard HTML `label` and `input` fields. I am wrapping the form fields with a Remix `<Form>` component:
+On the login page (`/login` ) itself, the form fields are standard HTML `label` and `input` fields. I am wrapping the form fields with a Remix `<Form>` component:
 
 ```jsx
 import { Form } from "@remix-run/react";
@@ -491,7 +490,6 @@ return (
 	</Form>
 
 )
-
 ```
 
 *NOTE: Here, I simplified code (removed styles and such) for readability,* [*full file here*](https://github.com/ahaywood/two-week-build__remix/blob/main/app/routes/_auth.login/route.tsx)*.*
@@ -538,7 +536,7 @@ const formData = new FormData(inputForm.current);
 const dataFields = Object.fromEntries(formData.entries());
 ```
 
-`FormData` is part of the [Web API](https://developer.mozilla.org/en-US/docs/Web/API/FormData). We can pass it the `ref` that we set up earlier and reference `current` to get all the `formData`. Now we can access the email and password with `[dataFields.email](<http://dataFields.email>)` and `dataFields.password` respectively.
+`FormData` is part of the [Web API](https://developer.mozilla.org/en-US/docs/Web/API/FormData). We can pass it the `ref` that we set up earlier and reference `current` to get all the `formData`. Now we can access the email and password with `dataFields.email` and `dataFields.password` respectively.
 
 Next, we can use the Supabase function `signInWithPassword` to determine whether the user entered the correct username and password.
 
@@ -549,7 +547,7 @@ const { data, error } = await supabase.auth.signInWithPassword({
 });
 ```
 
-It will return an object with the `data` and potentially an`error`.
+It will return an object with the `data` or potentially an `error`.
 
 Once the function runs, we can check to see if an `error` exists:
 
@@ -561,9 +559,9 @@ if (error) {
 }
 ```
 
-If there is an error, we can display it in the console: `console.error` and `return`, which will exit our `handleSubmit` function. Ideally, you’ll also want to display the error message to the user, as well.
+If there is an error, we can display it in the console: `console.error` and `return`, which will exit our `handleSubmit` function. Ideally, you’ll want to display the error message to the user.
 
-If there are no errors, we’ll be able to get past this conditional. Then, I’ll want to check to see if there’s a `session` on the `data` object. If there is, the login was successful, the user session was set up correctly, and I’ll navigate to the `/me` route.
+If there are no errors, we’ll be able to get past this conditional. Then, I want to check to see if there’s a `session` on the `data` object. If there is, the login was successful, the user session was set up correctly, and I’ll navigate to the `/me` route.
 
 ```jsx
 // redirect to the user's page
@@ -615,11 +613,11 @@ If the user isn’t logged in, I redirect them to the login page:
 if (data.user === null) return redirect("/login");
 ```
 
-If the user is logged in, then I need to figure out what their username is. If you’re using Supabase Auth, the Authentication table is locked down. You can’t add or change the existing fields.
+However, if the user is logged in, then I need to figure out what their username is. If you’re using Supabase Auth, the Authentication table is locked down. You can’t add or change the existing fields.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885607651/7e771983-1969-493d-bf50-3e627b3c502c.png align="center")
 
-If you want to keep track of any additional meta data, for your users, you’ll need to create a separate table and then “tie” the two together with the User’s UID (auth\_id).
+If you want to keep track of any additional meta data for your users, you’ll need to create a separate table and then “tie” the two together with the User’s UUID (auth\_id).
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885618811/50de1c3f-fb36-4f57-911d-a1b6904dbbc4.png align="center")
 
@@ -641,19 +639,17 @@ Then, I can redirect the user to their profile page:
 return redirect(`/${username.data?.username}`);
 ```
 
-&lt;aside&gt; 💎 **Important:** One thing that’s important about working with Supabase is understanding how Row Level Security works.
+✏️ **NOTE:** One thing that’s important about working with Supabase is understanding how Row Level Security works.
 
 > [Postgres Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security) (RLS) is a feature of Postgres that allows you to control which users are permitted to perform SELECT/INSERT/UPDATE/DELETE statements on specific rows within tables and views.
 
-Reference: [https://supabase.com/docs/guides/auth/row-level-security](https://supabase.com/docs/guides/auth/row-level-security)
+*Reference:* [*https://supabase.com/docs/guides/auth/row-level-security*](https://supabase.com/docs/guides/auth/row-level-security)
 
 By default, Row Level Security is turned on. So, if you don’t see any data after logging in, you may want to try *temporarily* turning off row level security to see if that’s causing a problem.
 
-&lt;/aside&gt;
-
 Sometimes it helps me if I can [see all the code together, in context.](https://github.com/ahaywood/two-week-build__remix/blob/main/app/routes/_auth.login/route.tsx)
 
-Let’s look at the other pieces with we need for Authentication.
+Let’s look at the other pieces we need for Authentication.
 
 ### Logout
 
@@ -685,7 +681,6 @@ const Logout = () => {
 };
 
 export default Logout;
-
 ```
 
 Since this component is running on the client side, we’ll use our `createSupabaseBrowserClient`. Then, I can call the `signOut` function:
@@ -696,16 +691,16 @@ supabase.auth.signOut()
 
 ### Sign Up Page
 
-Our Sign up page allows a user to register for an account. Since our user details is spread across two separate tables, we’ll need to create the entry on the authentication table first. Then, once we have the user ID, we can add the additional meta data to our user table.
+Our Sign up page allows a user to register for an account. Since our user details are spread across two separate tables, we’ll need to create the entry on the authentication table first. Then, once we have the user ID, we can add the additional meta data to our user table.
 
 On my `_auth.register/route.tsx` file, my form is pretty standard, using HTML `<label>`s and `<input>`s.
 
-My submit button at the end of the form, is a regular `button` with a `type` of `submit`.
+My submit button at the end of the form, is a regular HTML `button` with a `type` of `submit`.
 
 ```jsx
 <button type="submit" className="auth-button">
   SUBMIT
-</button> 
+</button>
 ```
 
 This will trigger the default browser behavior, submitting the form. Let’s look at the `<Form>` tag:
@@ -714,7 +709,7 @@ This will trigger the default browser behavior, submitting the form. Let’s loo
 <Form method="post" className="mb-20" ref={inputForm}>
 ```
 
-This is a Remix `Form` element with a `method` attribute set to `post`. Because I haven’t specified an `action`, it will default the current route. I can handle the form by adding a `function action` to the `_auth.register/route.tsx` file:
+This is a Remix `Form` element with a `method` attribute set to `post`. Because I haven’t specified an `action` attribute, it will default to the current route. I can handle the form by adding a `function action` to the `_auth.register/route.tsx` file:
 
 ```jsx
 export async function action({ request }: ActionFunctionArgs) {
@@ -741,7 +736,7 @@ const tiktok = formData.get("tiktok");
 const linkedin = formData.get("linkedin");
 ```
 
-I’m going to start by grabbing all the form data and assigning each value to it’s own variable. This just makes it easier to work with.
+I’m going to start by grabbing all the form data and assigning each value to it’s own variable. This makes it easier to work with.
 
 For example, the first thing I want to do is make sure the passwords match:
 
@@ -804,11 +799,11 @@ if (authResults.error) {
 
 Since this is on the server, we can use our `createSupabaseServerClient` function. Then, we can use the Supabase `auth.signUp` function to create a new user with the email address and password they provided. I also provided the `emailRedirectTo` which will be used in the messaging that Supabase emails to the user, asking them to confirm their email address.
 
-Of course, I also check to make sure that there wen’t any errors encountered along the way.
+Of course, I also check to make sure that there aren't any errors encountered along the way.
 
-Assuming everything is successful, though, information about the new user will be saved in the `authResults` variable. — we’ll need the new user id to connect this entry to the user’s table with meta data.
+Assuming everything is successful, information about the new user will be saved in the `authResults` variable. — we’ll need the new user id to connect this entry to the user’s table with meta data.
 
-Here, I’m using the Supabase API to `insert` a new entry on the `users` table, adding all the meta data we collected from our form. Notice the `auth_id` is set to the `[authResults.data.user.id](<http://authResults.data.user.id>)` from the auth table.
+Here, I’m using the Supabase API to `insert` a new entry on the `users` table, adding all the meta data we collected from our form. Notice the `auth_id` is set to the `authResults.data.user.id` from the auth table.
 
 ```jsx
 // create a user profile
@@ -846,7 +841,7 @@ if (userProfileResults.error) {
 }
 ```
 
-I also check to make sure that there aren’t errors. If there are, I also delete the user from the Authentication table. I don’t want to have an orphaned entry on the auth table. Instead, I’d rather delete it altogether and have the user try again.
+I also check to make sure that there aren’t errors. If there are, I also delete the user from the Authentication table. I don’t want to have an orphaned entry on the `auth` table! Instead, I’d rather delete it altogether and have the user try again.
 
 If everything is successful, then the user is redirected to the `/thank-you` page:
 
@@ -859,11 +854,11 @@ It’s important to note that the user isn’t logged in yet. Supabase will send
 
 If you want to [see all the code together, it’s here.](https://github.com/ahaywood/two-week-build__remix/blob/main/app/routes/_auth.register/route.tsx)
 
-This is perfect for the happy path. Everything goes according to plan. But, what if the user forgets their password?
+This is perfect for the happy path and everything goes according to plan. But, what if the user forgets their password?
 
 ### Forgot Password Page
 
-In the `app/routes/_auth.forogt.route.tsx` file, I have another form with a single `input` field, where the user can submit their email address.
+In the `app/routes/_auth.forgot.route.tsx` file, I have another form with a single `input` field, where the user can submit their email address.
 
 ```jsx
 <input type="email" name="email" id="email" />
@@ -911,7 +906,7 @@ const inputForm = useRef<HTMLFormElement>();
 <Form method="post" ref={inputForm as RefObject<HTMLFormElement>}>
 ```
 
-Then, I use the Supabase method `auth.resetPasswordForEmail` , sending it the user’s email address and setting the `redirectTo` the reset password page.
+Then, I use the Supabase method `auth.resetPasswordForEmail`, sending it the user’s email address and setting the `redirectTo` the reset password page.
 
 ```jsx
 supabase.auth.resetPasswordForEmail(
@@ -987,7 +982,7 @@ if (password !== confirmPassword) {
 }
 ```
 
-Here, I’m saving the error message in a piece of state and then conditionally displaying it on the page:
+If there is an error, I save the error message in a piece of state and then conditionally displaying it on the page:
 
 ```jsx
 {errorMessage && <div className="alert bg-error">{errorMessage}</div>}
@@ -1051,7 +1046,7 @@ When this form is submitted, I defer to the default browser behavior.
 
 But, I still put an `onClick` event handler on the `button` so that it will scroll to the top of the page (utilizing a `ref` on the wrapping `div`). This way the user will see the success or error message displayed at the top of the page. Otherwise, it will feel like nothing happened. The user needs visual feedback.
 
-On the Remix `Form` element, we specified the `post` method, but no action. Therefore, it will use the default `action` within the same route/file.
+On the Remix `Form` element, we specified the `post` method, but no `action` attribute. Therefore, it will use the default `action` within the same route/file.
 
 ```jsx
 export async function action({ request }: ActionFunctionArgs) {
@@ -1099,7 +1094,7 @@ First, we want to check to see if the user is trying to change their username. I
   }
 ```
 
-Next, we want to check to ensure that the `password` and `confirmPassword` match. Then, we’ll use an `else if` statement to see if the user is trying to change their password. The reason we’re doing this additional check is because the use could leave the `password` and `confirmPassword` fields blank. Since they’re both empty, they match! Then, we only want to run `auth.updateUser` if a new password exists. Otherwise, it will remove the existing password.
+Next, we want to check to ensure that the `password` and `confirmPassword` match. Then, we’ll use an `else if` statement to see if the user is trying to change their password. The reason we’re doing this additional check is because the user could leave the `password` and `confirmPassword` fields blank. Since they’re both empty, they match! Then, we only want to run `auth.updateUser` if a new password exists. Otherwise, it will remove the existing password altogether.
 
 ```jsx
 // if the user tried to change their password, make sure the password and confirm password match
@@ -1133,7 +1128,7 @@ if (formData.get("email") !== formData.get("oldEmail")) {
 }
 ```
 
-It might seem a little strange doing all the checks, but one of the reasons we’re using this logic is because each field has different rules. And the code for the user and their profile are stored in two different tables within Supabase.
+It might seem a little strange doing all these checks, but one of the reasons we’re using this logic is because each field has different rules. And the code for the user and their profile are stored in two different tables within Supabase.
 
 Now that we’ve performed all our validation, let’s get the remaining content out of the form and update the `users` table.
 
@@ -1166,7 +1161,7 @@ If you want to see [all the code in context, it’s on GitHub](https://github.co
 
 # Supabase Storage
 
-Supabase also has storage, built-in. Since I was already using the Suapbase database and auth, their storage product is an obvious choice.
+Supabase also has storage built-in. Since I was already using the Suapbase database and auth, their storage product is an obvious choice.
 
 For the MVP version of the application, the only image I really wanted the user to be able to upload is their avatar.
 
@@ -1174,13 +1169,13 @@ First, let’s set this up within Supabase. Under the **Storage** section, I add
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885675025/cc08840c-3ed6-443b-b29e-e5f689c2053b.png align="center")
 
-You’ll notice there are some warnings when you make a bucket public, but in our case, I want any one visiting the site to be able to the avatars.
+You’ll notice there are some warnings when you make a bucket public, but in our case, I want anyone visiting the site to be able to see the avatars.
 
 They appear at the bottom of the home page:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885685417/46712499-791b-4dd9-8577-703fa18cccfa.png align="center")
 
-As well as any each user’s profile page:
+As well as each user’s profile page:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885701640/990c48aa-23d7-4be1-ba1b-4d3acf9b4be9.png align="center")
 
@@ -1202,7 +1197,7 @@ This `input` is a standard HTML `input` field, with a `type="file"`
 </div>
 ```
 
-What makes this work, though, is on the Remix `Form` tag, I have an attribute of `encType` and have set it to `multipart/form-data`
+The key to making this work is the Remix `Form` tag. I have an attribute of `encType` set to `multipart/form-data`
 
 ```jsx
 <Form
@@ -1212,7 +1207,7 @@ What makes this work, though, is on the Remix `Form` tag, I have an attribute of
 >
 ```
 
-I set the `method` to `post`. Since I didn’t specify an `action` attribute, it will refer to the `action` function within the same file.
+I set the `method` to `post`. Since I didn’t specify an `action` attribute, it will use the `action` function within the same file.
 
 ```jsx
 const avatar = formData.get("avatar") as File | null;
@@ -1243,7 +1238,7 @@ Inside, I grab the content off the form.
 const avatar = formData.get("avatar") as File | null;
 ```
 
-check to see if `avatar` exists.
+Check to see if `avatar` exists.
 
 ```jsx
 if (avatar) {
@@ -1278,23 +1273,24 @@ You may have noticed that above the conditional, I initialize the variable:
 let avatarUrl = "";
 ```
 
-Then, we update it within the `if` statement, when I get the `publicUrl` back from Supabase. Or, within the `else` statement, I can infer that the user didn’t try to upload a new avatar and can set `avatarUrl` to whatever the value was previously (`oldAvatar` is set within a `hidden` `input` field.):
+Then, we update it within the `if` statement, when I get the `publicUrl` back from Supabase. Or, within the `else` statement, I can infer that the user didn’t try to upload a new avatar and can set `avatarUrl` to whatever the value was previously (`oldAvatar` is set within a hidden `input` field.):
 
 ```jsx
 avatarUrl = formData.get("oldAvatar") as string;
 ```
 
-Now, that we have the URL, we can save the `publicUrl` into the database, associating it with the appropriate user.
+Now, that we have the `publicUrl`, we can save it into the database, associating it with the appropriate user.
 
 [If you want to see all the code for this page, together, click here.](https://github.com/ahaywood/two-week-build__remix/blob/main/app/routes/_app.account/route.tsx)
 
-&lt;aside&gt; &lt;img src="/icons/exclamation-mark\_lightgray.svg" alt="/icons/exclamation-mark\_lightgray.svg" width="40px" /&gt; NOTE: One of the exciting announcements Supabase made last week is that they now support Amazon S3 storage! ([Announcement](https://supabase.com/blog/s3-compatible-storage) and [Documentation](https://supabase.com/docs/guides/database/extensions/wrappers/s3))
-
-&lt;/aside&gt;
+<div data-node-type="callout">
+<div data-node-type="callout-emoji">💡</div>
+<div data-node-type="callout-text"><strong><em>NOTE</em></strong>: One of the exciting announcements Supabase made last week is that they now support Amazon S3 storage! (<a target="_blank" rel="noopener noreferrer nofollow" href="https://supabase.com/blog/s3-compatible-storage" style="pointer-events: none">Announcement</a> and <a target="_blank" rel="noopener noreferrer nofollow" href="https://supabase.com/docs/guides/database/extensions/wrappers/s3" style="pointer-events: none">Documentation</a>)</div>
+</div>
 
 # Complex Supabase Queries
 
-On each user’s profile page, I’m running some complex queries in order to get the information I need to display to the user. In these scenarios, you want the database to do as much of the heavy lifting for you. This reduces making multiple calls to the database, as well as, putting cognitive load on the browser for sorting and filtering.
+On each user’s profile page, I’m running some complex queries to get the information I need to display to the user. In these scenarios, you want the database to do as much of the work for you. This reduces making multiple calls to the database, as well as, putting cognitive load on the browser for sorting and filtering.
 
 Here’s a visual representation of my database schema.
 
@@ -1310,16 +1306,16 @@ For the profile page, I needed:
     
 * Updates for the project
     
-* Comments on on each update.
+* Comments on on each update
     
 * For each comment, there’s also some user information required (their name, avatar, and username)
     
 * Project updates should be ordered by the date they were created so that the most recent updates appear at the top of the page
     
-* If I user has more than one project, I only want their most recent project. (You can only have 1 project per cohort)
+* If a user has more than one project, I only want their most recent project. (You can only have 1 project per cohort.)
     
 
-I was so impressed by Supabase’s API and that it was able to handle everything I needed within a single call.
+I was so impressed by Supabase’s API and that it was able to handle everything I needed within a single call!
 
 ```jsx
   const username = params.profile as string;
@@ -1343,7 +1339,7 @@ I was so impressed by Supabase’s API and that it was able to handle everything
 
 I’ll walk through each section.
 
-First, we need to get the `username`. This should get passed in from the URL. For example: [https://twoweekbuild.com/selfteachme](https://twoweekbuild.com/selfteachme) will load the profile for `selfteachme`.
+First, we need to get the `username`. This is passed in from the URL. For example: [https://twoweekbuild.com/selfteachme](https://twoweekbuild.com/selfteachme) will load the profile for `selfteachme`.
 
 This route’s file is named `app/route/_app.$profile._index/route.tsx` . The `$` in front of `$profile` denotes that it is a parameter that can be passed in through the URL.
 
@@ -1402,7 +1398,7 @@ Then, I’m only going to grab 1 project. Since we’re sorting, based on the da
 .limit(1, { referencedTable: "projects" })
 ```
 
-I only want to grab this content for a specific user, based on `username` .
+I only want to grab this content for a specific user, based on the `username` .
 
 ```jsx
 .eq("username", username)
@@ -1435,15 +1431,15 @@ There are two key areas where I reached for a custom function:
 
 ### Leaderboard
 
-I needed to grab all updates for a specific project, count how many days a person made an update, and then the specific dates of their update.
+For the leaderboard, I needed to grab all updates for a specific project, count how many days a person made an update, and then grab the specific dates for their update.
 
-The trick is there’s no limit to the number of updates a person can make each day. I didn’t want someone to make 50 updates in a single day and “hack” the leaderboard. It’s more about consistency over time. One update on Day 1 counts as 1. Ten updates on Day 1 counts as 1.
+The tricky part is there’s no limit to the number of updates a person can make each day. I didn’t want someone to make 50 updates in a single day and “hack” the leaderboard. It’s more about consistency over time. One update on Day 1 counts as 1. Ten updates on Day 1 counts as 1.
 
 Postgres, which is the underlying database for Supabase, is smart enough to make all these calculations.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885759295/f410eeed-88b6-481c-99a5-930d0c0ab523.png align="center")
 
-Within Supabase, there’s a **SQL Editor**. I know SQL, but I hate writing it and it’s been a while since I’ve had to write raw queries. Fortunately, Supabase also has an AI feature! You can tell Supabase AI what you’re trying to do and it will help you write the query. Similarly, if your query returns an error, Supabase AI will also help you troubleshoot. In the end, this the query that returned the results I was looking for.
+Within Supabase, there’s a **SQL Editor**. I know SQL, but I hate writing it and it’s been a while since I’ve had to write raw queries. Fortunately, Supabase also has an AI feature! You can tell Supabase AI what you’re trying to do and it will help you write the query. Similarly, if your query returns an error, Supabase AI will also help you troubleshoot. In the end, this is the query that returned the results I was looking for:
 
 ```sql
 select
@@ -1461,15 +1457,15 @@ select
 
 * I’m grabbing (`select`) the `id` and `name` fields on the `projects` table.
     
-* I’m also using the Postgres function `count` to count all the `updates`, but I’m referencing the `distinct` entries and saving the value as `update_count`
+* I can use the Postgres function `count` to count all the `updates`, but I’m referencing the `distinct` entries and saving the value as `update_count`
     
-* I create an array `array_agg` of `distinct DATE`s based on the `created_at` date and saving that data as `update_dates`
+* I create an array `array_agg` of `distinct DATE`s based on the `created_at` date and saving that value as `update_dates`
     
 * I’m working `from` the `projects` table
     
-* and connecting `left join` the `updates` table by the `id` field on the `projects` table and the `project_id` field on the `updates` table.
+* and connecting (`left join`) the `updates` table by the `id` field on the `projects` table and the `project_id` field on the `updates` table.
     
-* I’m grouping the results by the `[`[`project.id`](http://project.id)`](<`[`http://project.id`](http://project.id)`>)` and [`project.name`](http://project.name)
+* I’m grouping the results by the [`project.id`](http://project.id) and [`project.name`](http://project.name)
     
 
 You can also see the resulting tabular data within the editor:
@@ -1507,11 +1503,13 @@ $$;
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885812990/90c9364d-f8bf-4caa-b372-3422cc73de7f.png align="center")
 
-Now, if you navigate to Database &gt; Functions, you’ll see a list of all the functions you’ve created:
+As soon as you run the query, your database function will be created. 🙌
+
+Now, if you navigate to **Database &gt; Functions**, you’ll see a list of all the functions you’ve created:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885824872/dd19203a-9e6b-4e5a-a8b5-0fd9cb7808f8.png align="center")
 
-f you look at the details of the our project\_update\_count() function, you’ll see the SQL query that we created:
+If you look at the details of the our `project_update_count()` function, you’ll see the SQL query that we created:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885858693/8c08628d-f9aa-4ab8-9574-c2742acd8378.png align="center")
 
@@ -1528,19 +1526,19 @@ Pretty cool!
 
 I also used a Supabase function for aggregating the emoji reaction for each update. This was even more complex!
 
-For any update, the user has the ability to respond with any emoji.
+For any update, the user has the ability to respond with *any* emoji.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885918717/436f88b3-a7d2-422c-8258-941882406db5.png align="center")
 
 [On GitHub, I found an open source JSON file of all the emojis.](https://github.com/github/gemoji/blob/master/db/emoji.json)
 
-I have a separate table in the database that records the emoji the user selected, the user that reacted, and the update it’s associated with.
+I have a separate table in the database that records the emoji the user selected, the user ID that submitted the reaction, and the update that it’s associated with.
 
-A user can respond with multiple emojis, but they can only respond with one emoji once.
+A user can respond with multiple emojis, but they but each response must be unique. In other words, I can only respond with 1 🤩, not 2 🤩.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885944003/ce346902-159f-4a0e-a580-5d5970aa5273.png align="center")
 
-Within the application, I didn’t want to return all the emoji entries. If an update goes viral, that has the potential to be thousands, if not millions of records. It would be more performant, for the database to tell me the count for each. But, I also needed the database to tell me if the logged in user has responded with a specific emoji or not.
+Within the application, I didn’t want to return all the emoji entries. If an update goes viral, that has the potential to be thousands, if not millions of records! It would be more performant, for the database to report the count for each. But, I also need the database to tell me if the logged in user has responded with a specific emoji or not.
 
 Again, Supabase Functions!
 
@@ -1560,18 +1558,18 @@ group by
   emojis.emoji;
 ```
 
-* This, `select`s the `distinct` `emoji` on the `emojis` table.
+* This, `select`s the `distinct` emoji on the `emojis` table.
     
 * It gives me a true or false value `boolean_or` if the user ID I provide (so I’m passing in a parameter!) submitted that emoji.
     
-* I uses the Postgres function `count` again to count all the `emoji`s
+* I uses the Postgres function `count` to count all the `emoji`s
     
 * I’m limiting the result to a specific `update_id` — based on the update ID parameter that I’m providing
     
 * Finally, I `group by` the emoji.
     
 
-Then, I can create this function, by altering the query slightly:
+Then, I can create this function, by altering the query slightly within the SQL Editor:
 
 ```sql
 create
@@ -1595,7 +1593,7 @@ END; $$ language plpgsql stable;
 My `create or replace function` looks slightly different.
 
 ```sql
-get_unique_emojis (update_id_param uuid, user_id_param uuid) 
+get_unique_emojis (update_id_param uuid, user_id_param uuid)
 ```
 
 I’m calling my function `get_unique_emojis` and I’m establishing the 2 parameters that I’m going to pass in: `update_id_param uuid` and `user_id_param uuid`
@@ -1609,7 +1607,9 @@ const emojiResults = await supabase.rpc("get_unique_emojis", {
 });
 ```
 
-Unfortunately, you can’t chain a Supabase `select` statement and an `rpc` function together. So, I did need to make a call to the database to get all the updates. Then, run another loop to get all the emojis associated with each update. Nevertheless, this way is still more efficient than running the computation on the server or the browser.
+Unfortunately, you can’t chain a Supabase `select` statement and an `rpc` function together. So, I did need to make a call to the database to get all the updates. Then, run a loop over each update to get all the emojis associated with it. Nevertheless, this way is still more efficient than running the computation on the server or the browser.
+
+Sweet. 😎
 
 # Supabase Email + Resend
 
@@ -1617,25 +1617,27 @@ When I was running tests through Supabase, especially, the registration flow, I 
 
 I did a little digging and Supabase limits you to 30 emails in one hour. You can reach out to them directly if you’re launching a product and need to raise the limit, but it requests that you give them 2 weeks worth of notice.
 
-Since I was trying to launch my project *that* day, plus, I didn’t want to worry about this long term, I ended up reaching for a custom SMTP server. Fortunately, [Resend](https://resend.com) offers all of this out of the box.
+Since I was trying to launch my project *that* day, plus, I didn’t want to worry about this long term, I ended up reaching for a custom SMTP server. Fortunately, [Resend](https://resend.com) offers exactly what I needed, out of the box.
 
 I already have an account set up with Resend, but I did need to add the custom DNS settings to verify my domain.
 
-Then, I generated an API key. Save this for later, because you’ll need to use it as the SMTP password.
+Then, I generated an API key from Resend. Save this for later, because you’ll need to use it as the SMTP password.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885958844/6dd80d2c-2dca-43b0-a390-de1c7dc26061.png align="center")
 
-Then, under Project Settings &gt; Authentication, I have “Enable Custom SMTP” turned on. Then, I added Resend Provider Settings.
+Then in Supabase, under **Project Settings &gt; Authentication**, I have “Enable Custom SMTP” turned on. Then, I added the Resend Provider Settings.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885978435/92fbdcf2-4871-406a-9e2f-c67b519f31c3.png align="center")
 
 Easy Peasy.
 
-As an added benefit of using Resend is you have insight into what emails are being sent out.
+As an added benefit of using Resend, you also have insight into what emails are being sent out.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713885989664/9735865d-71ab-4dee-9516-42baa466d298.png align="center")
 
 Lovely. 🤩
+
+---
 
 # Conclusion
 
